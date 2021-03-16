@@ -13,7 +13,7 @@ namespace FilmesCRUDRazor.Migrations
                 {
                     FilmeId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Titulo = table.Column<string>(type: "TEXT", nullable: true),
+                    Titulo = table.Column<string>(type: "TEXT", nullable: false),
                     DataLancamento = table.Column<DateTime>(type: "TEXT", nullable: false),
                     Genero = table.Column<string>(type: "TEXT", nullable: true),
                     Preco = table.Column<decimal>(type: "TEXT", nullable: false)
