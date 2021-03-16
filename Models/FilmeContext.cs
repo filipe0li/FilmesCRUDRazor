@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 namespace FilmesCRUDRazor.Models
 {
-    internal class FilmeContext : DbContext
+    public class FilmeContext : DbContext
     {
         public FilmeContext(DbContextOptions<FilmeContext> options)
             : base(options)

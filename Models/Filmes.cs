@@ -2,7 +2,7 @@ using System;
 
 namespace FilmesCRUDRazor.Models
 {
-    internal class Filme
+    public class Filme
     {
         public int FilmeId { get; set; }
         public string Titulo { get; set; }
