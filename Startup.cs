@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using FilmesCRUDRazor.Models;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 
 namespace FilmesCRUDRazor
 {
@@ -42,6 +44,17 @@ namespace FilmesCRUDRazor
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            // Globalize
+            CultureInfo defaultCulture = new CultureInfo("pt-BR");
+            RequestLocalizationOptions localizationOptions = new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture(defaultCulture),
+                SupportedCultures = new List<CultureInfo> { defaultCulture },
+                SupportedUICultures = new List<CultureInfo> { defaultCulture }
+            };
+            app.UseRequestLocalization(localizationOptions);
+            // Globalize end
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
