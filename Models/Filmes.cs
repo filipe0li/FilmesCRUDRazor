@@ -24,6 +24,8 @@ namespace FilmesCRUDRazor.Models
         [Display(Name = "Preço")]
         [DataType(DataType.Currency)]
         [Column(TypeName = "decimal(18,2)")]
+        [RegularExpression(@"^[0-9]([.,][0-9]{1,2})?$", ErrorMessage = "Insira um valor válido.")]
+        //[DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true)]
         public decimal Preco { get; set; }
     }
 }
